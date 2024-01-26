@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ":8080"
+    networks:
+      - shared_network
+    restart: always
+
+networks:
+  shared_network:
+    external: true
